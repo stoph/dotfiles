@@ -16,7 +16,7 @@ shopt -s histappend
 PS1="[\u][\w/]\$ "
 
 # Functions
-f () { find . -type f \( -name "*.php" -o -name "*.phtml" -o -name "*.sh" \) -print0 | xargs -0 grep -i "$1" ; }
+f () { find . -type f \( -name "*.php" \) -print0 | xargs -0 grep -i "$1" ; }
 fjs () { find . -type f \( -name "*.js" \) -print0 | xargs -0 grep -i "$1" ; }
 fall () { find . -type f -print0 | xargs -0 grep -i "$1" ; }
 
