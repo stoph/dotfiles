@@ -1,5 +1,3 @@
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
 set nocompatible
 
 " ================ General Config ====================
@@ -11,26 +9,27 @@ set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 set cursorline                  "Highlight current line
 set autoread                    "Reload files changed outside vim
-
-" This makes vim act like all other editors, buffers can
-" exist in the background without being in a window.
-" http://items.sjbach.com/319/configuring-vim-right
+set ttyfast                     "Optimize for fast terminal connections
+set gdefault                    "Add the g flag to search/replace by default
+set encoding=utf-8 nobomb       "Use UTF-8 without BOM
 set hidden
 
-"turn on syntax highlighting
-syntax on
+syntax on                       "turn on syntax highlighting
 
-" ================ Search Settings  =================
+set incsearch                   "Find the next match as we type the search
+set hlsearch                    "Hilight searches by default
+set viminfo='100,f1             "Save up to 100 marks, enable capital marks
+set ignorecase                  " Ignore case of searches
 
-set incsearch        "Find the next match as we type the search
-set hlsearch         "Hilight searches by default
-set viminfo='100,f1  "Save up to 100 marks, enable capital marks
+set binary
+set noeol                       " Don’t add empty newlines at the end of files
 
-" ================ Turn Off Swap Files ==============
-
-set noswapfile
-set nobackup
-set nowb
+" Centralize backups, swapfiles and undo history
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+if exists("&undodir")
+    set undodir=~/.vim/undo
+endif
 
 " ================ Indentation ======================
 
@@ -41,34 +40,24 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 
-" Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:\ \ ,trail:·     " Display tabs and trailing spaces visually
 
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
-" ================ Folds ============================
-
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
-
-" ================ Completion =======================
 
 set wildmode=list:longest
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
 
-"
-
-" ================ Scrolling ========================
-
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
-" =============== Status Line =======================
 set laststatus=2
 set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \
 set statusline+=\ \ \ [%{&ff}/%Y]
