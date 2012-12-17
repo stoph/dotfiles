@@ -45,10 +45,6 @@ set list listchars=tab:\ \ ,trail:·     " Display tabs and trailing spaces visu
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
-set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
-
 set wildmode=list:longest
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
