@@ -1,3 +1,6 @@
+" Disable automatic comment insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 set nocompatible
 
 " ================ General Config ====================
@@ -25,10 +28,10 @@ set binary
 set noeol                       " Don’t add empty newlines at the end of files
 
 " Centralize backups, swapfiles and undo history
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
+set backupdir=~/.vim
+set directory=~/.vim
 if exists("&undodir")
-    set undodir=~/.vim/undo
+    set undodir=~/.vim
 endif
 
 " ================ Indentation ======================
