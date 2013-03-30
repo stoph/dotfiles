@@ -10,6 +10,7 @@ done
 unset file
 
 #aliases
+alias ll='ls -lah'
 alias gs='git status -s'
 alias gd='git diff -w --color'
 alias gdm='git diff -w --color origin/master..master'
