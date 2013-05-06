@@ -17,6 +17,8 @@ alias gdm='git diff -w --color origin/master..master'
 alias gc='git commit'
 alias gp='git pull'
 alias gpush='git push'
+alias gb='git branch'
+alias gco='git checkout'
 alias gl="git log --pretty=format:'%C(bold blue)%ad %Cred%an%Cgreen%d %C(yellow)%s %Creset' --abbrev-commit | head -n 30"
 alias glm="git log --pretty=format:'%C(bold blue)%ad %Cred%an%Cgreen%d %C(yellow)%s %Creset' --abbrev-commit origin..HEAD"
 
