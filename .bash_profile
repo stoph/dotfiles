@@ -21,6 +21,7 @@ alias gb='git branch'
 alias gco='git checkout'
 alias gl="git log --pretty=format:'%C(bold blue)%ad %Cred%an%Cgreen%d %C(yellow)%s %Creset' --abbrev-commit | head -n 30"
 alias glm="git log --pretty=format:'%C(bold blue)%ad %Cred%an%Cgreen%d %C(yellow)%s %Creset' --abbrev-commit origin..HEAD"
+alias glb="git log --pretty=format:'%C(bold blue)%ad %Cred%an%Cgreen%d %C(yellow)%s %Creset' --abbrev-commit master.."
 
 #History settings
 export HISTTIMEFORMAT='%D %T '
