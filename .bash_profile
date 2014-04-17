@@ -11,7 +11,7 @@ unset file
 
 #aliases
 alias ll='ls -lah'
-alias gs='git status -s'
+alias gs='git status -sb'
 alias gd='git diff -w --color'
 alias gdm='git diff -w --color origin/master..master'
 alias gc='git commit'
@@ -44,7 +44,16 @@ for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null
 done
 
-PS1="[\u][\w/]\$ "
+# git integration
+source /usr/local/git/contrib/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=
+GIT_PS1_SHOWUNTRACKEDFILES=
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_SHOWUPSTREAM="auto"
+
+#PS1="[\u][\w/]\$ "
+PROMPT_COMMAND='__git_ps1 "[\u][\w/]" "\\\$ "'
 
 #Display information on login
 echo -ne "Today is "; date
